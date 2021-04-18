@@ -21,10 +21,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "node backend/server.js", 
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run build",
+    "install-front": "npm install",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
+    "heroku-postbuild": "npm run install-front && npm run build"
   },
   "eslintConfig": {
     "extends": [
